@@ -1,0 +1,143 @@
+
+Global styles
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  /* Menu styles */
+  .menu {
+    margin: 20px auto;
+    max-width: 800px;
+    
+  }
+  
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  
+  
+  .item {
+    margin-bottom: 1px;
+    position: relative;
+    width: 23%;
+    margin-right: 2%;
+  }
+  
+  img {
+    border-radius: 5px;
+    height: 200px;
+    justify-content: s;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+   position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .overlay button {
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 93%;
+    padding: 20px 20px;
+    transition: background-color 0.3s ease-in-out;
+    transform: translateY(-50%);
+  }
+  
+  .overlay button:hover {
+    background-color: #444;
+  }
+  
+  .item:hover .overlay {
+    opacity: 1;
+  }
+  
+  /* Table styles */
+  table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  th,
+  td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #f8f8f8;
+  }
+  
+  tfoot td {
+    font-weight: bold;
+    text-align: right;
+  }
+  
+  tfoot button {
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-top: 10px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  tfoot button:hover {
+    background-color: #444;
+  }
+  
+  tfoot td:first-child {
+    text-align: left;
+  }
+  
+  h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+  

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Restaurant</title>
+  </head>
+  <body>
+
+       <div class="menu">
+      <h1>Sunday Special</h1>
+       <br> <br> <br>
+      <div class="image-container">
+        <div class="item">
+          <img src="assets/image/Tandoori-Chicken-Recipe.jpg" alt="Image 1">
+          <p>Empire Restaurant</p>
+          <P>North Indian, Tandoori</P>
+          <div class="overlay">
+            <button (click)="addToCart('Tandoori Chicken', 250)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="item">
+          <img src="assets/image/Chicken-Hakka-Noodles-2-3.jpg" alt="Image 2">
+          <p>Nandhana Restaurant</p>
+          <P>North Indian, Biryani</P>
+          <div class="overlay">
+            <button (click)="addToCart('Chicken Hakka Noodles', 300)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="item">
+    
+            <img src="assets/image/ycqqwezjvdizcym6x2x6.webp" alt="Image 3">
+            <p>Parvati Restaurant</p>
+          <P>South Indian, Biryani</P>
+          <div class="overlay">
+            <button (click)="addToCart('Biryani', 289)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="item">
+          <img src="assets/image/Chicken-Biryani-Recipe.jpg" alt="Image 4">
+          <p>Hotel Amrut </p>
+          <P>South Indian, Chicken Biryani</P>
+          <div class="overlay">
+            <button (click)="addToCart('Chicken Biryani', 199)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+     
+
+      <br> <br>
+     
+      <div class="image-container">
+        <div class="item">
+          <img src="assets/image/Mutton-Biryani-Recipe.jpg" alt="Image 1">
+          <p>Hotel Amrut </p>
+          <P> Mutton Biryani</P>
+          <div class="overlay">
+            <button (click)="addToCart('Mutton Biryani', 400)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="item">
+          <img src="assets/image/chickenfired.jpg" alt="Image 2">
+          <p>Hotel Citrus </p>
+          <P> Chicken Fired Rice</P>
+          <div class="overlay">
+            <button (click)="addToCart('Chicken Fired Rice', 170)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="item">
+          <img src="assets/image/tangadi kabab.jpg" alt="Image 3">
+          <p>Hotel Swati </p>
+          <P>South Indian, Tangadi Kabab</P>
+          <div class="overlay">
+            <button (click)="addToCart('Tangadi Kabab', 260)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="item">
+          <img src="assets/image/pexels-photo-2097090.jpeg" alt="Image 4">
+          <p>Hotel Amrut </p>
+          <P>Special South Indian</P>
+          <div class="overlay">
+            <button (click)="addToCart('Specail South Indian', 240)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <br> <br> <br>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cartItems; let i=index">
+            <td>{{ item.name }}</td>
+            <td>{{ item.price }}</td>
+            <td>
+              <button (click)="decrement(i)">-</button>
+              {{ item.quantity }}
+              <button (click)="increment(i)">+</button>
+            </td>
+            <td>{{ item.quantity * item.price }}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">Total:INR</td>
+            <td>{{ getTotalPrice() }}</td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <button (click)="checkout()">Checkout</button>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  
+  </body>
+</html>
+
