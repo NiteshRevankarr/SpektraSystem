@@ -1,0 +1,18 @@
+
+<h2>Select Country</h2>
+
+<select (change)="SetDropDownValue($event)">
+  <option value="">Select</option>
+  <option value="India">India</option>
+  <option value="Canada">Canada</option>
+  <option value="Japan">Japan</option>
+</select>
+
+<h2>You Have Selected</h2>
+
+<div [ngSwitch] = 'dropDownValue'>
+  <h3 *ngSwitchCase="'India'">India</h3>
+  <h3 *ngSwitchCase="'Canada'">Canada</h3>
+  <h3 *ngSwitchCase="'Japan'">Japan </h3>
+  <h3 *ngSwitchDefault="">You have not selected any country</h3>
+</div>

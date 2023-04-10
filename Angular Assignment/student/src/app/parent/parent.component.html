@@ -1,0 +1,60 @@
+<h1>Student Information</h1>
+<fieldset>
+
+
+<form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+  <div>
+    <label for="studentId">Student ID:</label>
+    <input type="text" id="studentId" name="studentId" ngModel required>
+  </div>
+  <div>
+    <label for="studentName">Student Name:</label>
+    <input type="text" id="studentName" name="studentName" ngModel required>
+  </div>
+  <div>
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" ngModel required>
+      <option value="">-- Select Gender --</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+  </div>
+  <div>
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" ngModel required>
+  </div>
+  <div>
+    <label for="coursefee">Course Fee:</label>
+    <input type="number" id="coursefee" name="coursefee" ngModel required>
+  </div>
+  <button type="submit">Add Student</button>
+</form>
+</fieldset>
+<hr>
+
+<h2>Student List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Student ID</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Date of Birth</th>
+      <th>Course Fee</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{ student.id }}</td>
+      <td>{{ student.name }}</td>
+      <td>{{ student.gender }}</td>
+      <td>{{ student.dob }}</td>
+      <td>{{ student.coursefee }}</td>
+      <td><button (click)="onDelete(student)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<app-child [totalStudents]="getTotalStudents()" [totalMales]="getTotalMales()" [totalFemales]="getTotalFemales()"></app-child>

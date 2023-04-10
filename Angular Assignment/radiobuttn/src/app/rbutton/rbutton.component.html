@@ -1,0 +1,22 @@
+<div class="container">
+    <div>
+      <h1>Choose an option:</h1>
+      
+      <div class="radio-container">
+        <label>
+          <input type="radio" name="option" (click)="showMessage(true)">
+          <span>Valid</span>
+        </label>
+        <label>
+          <input type="radio" name="option" (click)="showMessage(false)">
+          <span>Invalid</span>
+        </label>
+      </div>
+    </div>
+    <div>
+     
+      <p>{{message}}</p>
+    </div>
+  </div>
+  
+  

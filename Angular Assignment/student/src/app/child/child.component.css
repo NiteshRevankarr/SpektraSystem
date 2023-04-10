@@ -1,0 +1,24 @@
+.summary-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .summary-container p {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  
+  .summary-container p:first-child {
+    color: blue;
+  }
+  
+  .summary-container p:nth-child(2) {
+    color: green;
+  }
+  
+  .summary-container p:last-child {
+    color: rgb(230, 11, 47);
+  }
+  

@@ -1,0 +1,162 @@
+
+body {
+  background-color: #f8f9fa;
+}
+
+
+fieldset {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 500px;
+  border: none;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+h1{
+  text-align: center;
+}
+
+
+label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Add some hover and focus effects to the inputs */
+input[type="text"]:hover,
+input[type="text"]:focus,
+input[type="number"]:hover,
+input[type="number"]:focus,
+input[type="date"]:hover,
+input[type="date"]:focus,
+select:hover,
+select:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Style the submit button */
+button[type="submit"] {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Add some hover and active effects to the button */
+button[type="submit"]:hover,
+button[type="submit"]:active {
+  background-color: #0069d9;
+  border-color: #0062cc;
+  
+}
+
+/* Style the select dropdown arrow */
+select::-ms-expand {
+  display: none;
+}
+
+select::-webkit-scrollbar {
+  width: 12px;
+}
+
+select::-webkit-scrollbar-thumb {
+  background-color: #007bff;
+  border-radius: 4px;
+}
+
+select::-webkit-scrollbar-track {
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+legend {
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th,
+td {
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Style the delete button */
+button[type="button"] {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+}
+
+form div {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+form label {
+  width: 150px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+form input, form select {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+form button {
+  margin: 10px;
+}
+
+h2{
+  text-align: center;
+}

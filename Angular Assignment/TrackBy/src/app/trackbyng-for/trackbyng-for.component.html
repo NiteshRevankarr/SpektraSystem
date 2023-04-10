@@ -1,0 +1,19 @@
+<table class="table table-striped-columns">
+    <thead>
+        <tr>
+            <th>Employee_ID</th>
+            <th>Employee_Name</th>
+            <th>Employee_Email</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let person of employeesList; trackBy: refreshEmployees">
+            <td>{{person.empid}}</td>
+            <td>{{person.name}}</td>
+            <td>{{person.emailid}}</td>
+            <td>{{person.gender}}</td>
+        </tr>
+    </tbody>
+</table>
+<button (click)="refresh()">Refresh</button>

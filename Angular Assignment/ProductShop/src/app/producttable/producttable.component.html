@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Cart</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Product ID</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Size</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{ product.id }}</td>
+           <td> <img [src]="product.image" alt="Product image"></td>
+
+            <td>{{ product.description }}</td>
+            <td>{{ product.price }}</td>
+            <td>
+              <select (change)="selectSize($event, product)">
+                <option *ngFor="let size of sizes" [value]="size" [selected]="size === product.size">{{ size }}</option>
+              </select>
+            </td>
+            <td>
+              <button (click)="decrementQuantity(product)">-</button>
+              {{ product.quantity }}
+              <button (click)="incrementQuantity(product)">+</button>
+            </td>
+            <td>{{ product.price * product.quantity }}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="6"></td>
+            <td>Total: {{ getTotalPrice() }} </td>
+          </tr>
+          <tr>
+            <td colspan="7"></td>
+          </tr>
+          <tr>
+            <td colspan="6"></td>
+            <td>
+              <div >
+                <button (click)="checkout()" class="checkout-btn">Checkout</button>
+              </div>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </body>
+</html>
+
