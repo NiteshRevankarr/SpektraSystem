@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Validate.css">
+    <title>Validate</title>
+</head>
+<body>
+   
+    <script>
+        function validateform() {
+            var name = document.myform.name.value;
+            var password = document.myform.password.value;
+            var password1 = document.myform.password1.value;
+
+            if (name == null || name == "") {
+                alert("Name can't be blank");
+
+            } else if (password.length != password1.length) {
+                alert("Enter a correct password");
+
+            } else alert("Confirm the link sent to your email");
+        }  
+    </script>
+
+    <br> <br> <br> <br> <br>
+    <center>
+<fieldset id="box">
+     <br> <br>
+        <form name="myform" method="post" onsubmit="return validateform()">
+            Name: <input type="text" name="name" placeholder="Full Name"><br />
+            Password: <input type="password" name="password" placeholder="Password"><br />
+            Re-enter Password:<input type="password" name="password1" placeholder="Re-enter"><br />
+            <input type="submit" value="Register">
+        </form>
+    </fieldset>
+</center>
+</body>
+</html>

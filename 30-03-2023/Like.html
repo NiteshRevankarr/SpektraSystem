@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="ss.css">
+  
+</head>
+
+
+
+<nav class="navbar">
+    <a class="logo" href="#">Hood</a>
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Explore</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Settings</a></li>
+    </ul>
+    
+</nav>
+
+
+<br> <br> <br> <br>
+
+<form>
+    <label for="image-input">Upload Image:</label>
+    <input type="file" id="image-input" accept="image/*">
+    <img id="image-preview" src="" style="max-width: 720px; max-height: 720px;">
+    <button type="button" id="like-button" onclick="incrementLikes()">
+        <div class="like-wrapper">
+            <i class="fas fa-heart"></i>
+            <span id="like-count">0</span>
+        </div>
+    </button> <br>
+
+    <div class="comment-wrapper">
+        <textarea id="comment-input"></textarea>
+        <button type="button" id="comment-button" onclick="toggleComments()">Comment</button>
+    </div>
+    <ul id="comment-list" class="hidden"></ul>
+</form>
+<div id="comment-section"></div>
+
+
+
+
+
+<script>
+    function readImage(input) {
+        if (input.files && input.files[0]) {    
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById("image-preview").src = e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    document.getElementById("image-input").addEventListener("change", function () {
+        readImage(this);
+    });
+
+    var likes = 0;
+    function incrementLikes() {
+        likes++;
+        document.getElementById("like-count").innerHTML = likes;
+    }
+
+
+    function toggleComments() {
+        var commentInput = document.getElementById("comment-input");
+        var commentList = document.getElementById("comment-list");
+        var newComment = document.createElement("li");
+        var newContent = document.createTextNode(commentInput.value);
+        newComment.appendChild(newContent);
+
+        if (commentInput.value === "") {
+            alert("Please enter a comment.");
+        } else {
+            commentInput.value = "";
+            commentList.appendChild(newComment);
+            commentList.classList.remove("hidden");
+        }
+    }
+</script>
+</body>
+
+</html>

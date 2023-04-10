@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade</title>
+    <link rel="stylesheet" href="grade.css">
+</head>
+
+<body>
+    <script>
+        function res() {
+            var mat = Number(document.getElementById("sum1").value)
+            var phy = Number(document.getElementById("sum2").value)
+            var che = Number(document.getElementById("sum3").value)
+            var cs = Number(document.getElementById("sum4").value)
+
+            var sum = mat + phy + che + cs;
+            var average = sum / 4
+
+            document.write("Total marks" + sum + "<br/>");
+
+            document.write("percentage is:" + average + "<br/>");
+
+            if (average >= 0 && average <= 70) {
+                document.write("D Grade");
+            }
+            else if (average >= 71 && average <= 80) {
+                document.write("C Grade");
+            }
+            else if (average >= 81 && average <= 90) {
+                document.write("B Grade");
+            }
+            else if (average >= 91 && average <= 100) {
+                document.write("A Grade");
+            }
+        }
+    </script>
+    <br><br> 
+<center>
+<fieldset id="grade">
+    <form style="text-align: center;">
+        <h1>Marks Form</h1>
+        <table>
+            Maths:<input type="tel" id="sum1"><br> <br>
+            Physics:<input type="tel" id="sum2"><br> <br>
+            Chemistry:<input type="tel" id="sum3"><br> <br>
+            CS:<input type="tel" id="sum4"><br>
+            <input type="submit" value="submit" onclick="res()">
+        </table>
+    </form>
+</fieldset>
+</center>
+
+</body>
+
+</html>

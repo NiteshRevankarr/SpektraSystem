@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="prd.css">
+    <link rel="stylesheet" href="Ecomm.css">
+    <title>Products</title>
+</head>
+
+<body>
+
+    <section>
+
+        <div class="navbar">
+            <div class="search-container">
+                <form action="/search">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+            <div>
+                <a href="Ecomm.html">Home</a>
+
+
+                <a href="Products.html">Products</a>
+
+                <a href="#" class="active">Cart</a>
+                <a href="Contact.html">Contact</a>
+            </div>
+        </div>
+    </section>
+    <center>
+        <h1>Mens & Womens</h1>
+    </center>
+    <div>
+        <h2>Cart</h2>
+      <ul class="cart-items"></ul>
+      <div class="cart-total"></div>
+      <button class="checkout-btn">Checkout</button>
+    </div>
+    <div class="products-list">
+      <div class="product-card">
+        <img class="product-image" src="apparel1.jpg" alt="Product 1">
+        <div class="product-details">
+          <div class="product-name">Product 1</div>
+          <div class="product-price">$24.99</div>
+          <div class="product-discount">10% off</div>
+          <button class="add-to-cart-btn" data-name="Product 1" data-price="24.99">Add to Cart</button>
+        </div>
+    </div>
+
+
+    </div>
+
+    <script>
+        const cartItems = document.querySelector('.cart-items');
+const cartTotal = document.querySelector('.cart-total');
+const checkoutBtn = document.querySelector('.checkout-btn');
+let cart = [];
+
+document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const { name, price, image } = btn.dataset;
+    const item = cart.find(item => item.name === name);
+    item ? item.quantity++ : cart.push({ name, price, image, quantity: 1 });
+    displayCart();
+  });
+});
+
+function displayCart() {
+  cartItems.innerHTML = '';
+  cart.forEach((item, index) => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <img src="${item.image}" alt="${item.name}">
+      <div>
+        <span>${item.name} x ${item.quantity} - $${item.price * item.quantity}</span>
+        <button class="remove-item-btn">-</button>
+        <button class="add-item-btn">+</button>
+      </div>`;
+    const removeBtn = li.querySelector('.remove-item-btn');
+    removeBtn.addEventListener('click', () => {
+      item.quantity > 1 ? item.quantity-- : cart.splice(index, 1);
+      displayCart();
+    });
+    const addBtn = li.querySelector('.add-item-btn');
+    addBtn.addEventListener('click', () => {
+      item.quantity++;
+      displayCart();
+    });
+    cartItems.appendChild(li);
+  });
+  cartTotal.innerText = `Total: $${cart.reduce((acc, item) => acc + item.price * item.quantity, 0)}`;
+}
+
+checkoutBtn.addEventListener('click', () => {
+  alert('Thank you for your purchase!');
+  cart = [];
+  displayCart();
+});
+
+
+
+    </script>
+
+
+
+   
+
+
+
+        
+
+
+
+
+   
+    <center>
+        <footer>
+            <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+        </footer>
+    </center>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

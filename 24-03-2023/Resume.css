@@ -1,0 +1,41 @@
+#page
+{
+    padding: 0px 60px;
+}   
+
+#heading{
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-padding{
+    padding: 0px 60px;
+}
+.med-font
+{
+    font-size: 20px;
+}
+.info-head{
+    padding: 10px 20px;
+    background-color: rgba(128, 128, 128, 0.403);
+    font-size: 45px;
+    font-weight: 200;
+    padding-left: 60px;
+}
+
+#persnl-info
+{
+    display: flex;
+    justify-content: space-between;
+}
+#intern,#edu
+{
+    display: flex;
+    
+}
+#skills li,#project li
+{
+ padding: 10px 0px;
+ font-size: 22px;
+}

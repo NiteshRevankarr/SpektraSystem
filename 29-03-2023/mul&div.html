@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>Multiplication of two numbers</title>
+     <link rel="stylesheet" href="mul&div.css"> 
+    <script>
+        function mul()//function to multiplication
+        {
+            var Num1, Num2;
+            Num1 = Number(document.getElementById("first").value);
+            Num2 = Number(document.getElementById("second").value);
+            multiply = Num1 * Num2;
+            document.getElementById("ans").innerHTML = "Multiply:" + multiply;
+        }
+        function div()   //function to divide
+        {
+            var Num1, Num2;
+            Num1 = Number(document.getElementById("first").value);
+            Num2 = Number(document.getElementById("second").value);
+            divide = Num1 / Num2;
+            document.getElementById("ans").innerHTML = "Divide:" + divide;
+        }
+    </script>
+</head>
+
+<br><br> <br>
+
+
+<center>
+    <fieldset id="mul">
+
+        <body>
+            <p>Enter the first Number:<input type="text" id="first"></p> <br>
+            <p>Enter the second Number:<input type="text" id="second"></p> <br>
+            <button onclick="mul()">Multiply</button>
+            <button onclick="div()">Divide</button>
+            <p id="ans"></p>
+            <p id="ans"></p>
+        </body>
+
+
+</center>
+
+</html>

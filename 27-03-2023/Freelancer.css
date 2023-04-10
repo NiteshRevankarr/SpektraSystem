@@ -1,0 +1,19 @@
+h1{
+    text-align: center;
+
+}
+
+.Main{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+
+}
+
+.first img {
+    border-radius: 50%;
+
+
+}
+

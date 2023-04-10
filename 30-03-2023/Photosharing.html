@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPhotoApp</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/your_kit_id.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="ss.css">
+</head>
+<body>
+   
+
+    <nav class="navbar">
+        <a class="logo" href="#">MyPhotoApp</a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+        <!-- <button class="upload-btn" onclick="document.getElementById('image-input').click()">Upload</button> -->
+    </nav>
+
+
+    <center> <br> <br> <br> <br> <br>
+        <div>
+            <label for="image-input">Upload Image:</label>
+            <input type="file" id="image-input" accept="image/*" onchange="readImage(this);">
+            <img id="image-preview" src="" style="max-width: 720px; max-height: 720px;">
+            <button type="button" id="like-button" onclick="incrementLikes()">
+                <div class="like-wrapper">
+                    <i class="fas fa-heart"></i>
+                    <span id="like-count">0</span>
+                </div>
+            </button> <br>
+        
+            <div class="comment-wrapper">
+                <textarea id="comment-input"></textarea>
+                <button type="button" id="comment-button" onclick="addComment()">Comment</button>
+            </div>
+            <ul id="comment-list"></ul>
+        </div>
+
+        <button class="upload-btn" type="button">Upload</button>
+
+        
+    <script>
+        function readImage(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById("image-preview").src = e.target.result;
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        var likes = 0;
+        function incrementLikes() {
+            likes++;
+            document.getElementById("like-count").innerHTML = likes;
+        }
+
+        function addComment() {
+            var comment = document.getElementById("comment-input").value;
+            var commentList = document.getElementById("comment-list");
+            var newComment = document.createElement("li");
+            newComment.innerHTML = comment;
+            commentList.appendChild(newComment);
+        }
+    </script>
+</body>
+</html>
+
