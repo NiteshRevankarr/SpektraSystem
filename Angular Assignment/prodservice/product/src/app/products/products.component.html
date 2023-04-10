@@ -1,0 +1,21 @@
+<h2>Product Details</h2>
+<table class="table table-primary table-striped" style="width: 700px;">
+    <thead class="table-dark">
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Type</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of productDetails">
+            <td>{{product.id}}</td>
+            <td>{{product.itemName}}</td>
+            <td>{{product.type}}</td>
+            <td>{{product.qty}}</td>
+            <td>{{product.price}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,19 @@
+
+<table *ngIf="employee && employee.length">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Employee ID</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employee">
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="displayEmployees()">Display Employees</button>
+  
