@@ -1,0 +1,64 @@
+{
+  "posts": [
+    {
+      "name": "Akshay Goankar",
+      "email": "AkshaGoankar@gmail.com",
+      "designation": "Designer",
+      "salary": 200000,
+      "address": "Margoa",
+      "id": 2
+    },
+    {
+      "name": "Gaurav",
+      "email": "GauravNaik22@gmail.com",
+      "designation": "Manager",
+      "salary": 80000,
+      "address": " karwar",
+      "id": 3
+    },
+    {
+      "name": "Nitesh Revankar",
+      "email": "niteshrevankar6@gmail.com",
+      "designation": "Developer",
+      "salary": 27000,
+      "address": "karwar",
+      "id": 4
+    },
+    {
+      "name": "Pranjali",
+      "email": "PranjaliT33@gmail.com",
+      "designation": "HR",
+      "salary": 45000,
+      "address": "Goa",
+      "id": 5
+    },
+    {
+      "name": "S8UL Payal",
+      "email": "payalshiks@gmail.com",
+      "designation": "Developer",
+      "salary": 39000,
+      "address": "Cancona",
+      "id": 6
+    },
+    {
+      "name": "Anupam",
+      "email": "Anupam3333@gmail.com",
+      "designation": "Developer",
+      "salary": 95000,
+      "address": "Bihar",
+      "id": 7
+    },
+    {
+      "name": "Pankaj",
+      "email": "Pankaj33@gmail.com",
+      "designation": "Manager",
+      "salary": 23333,
+      "address": "Raichur",
+      "id": 8
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
