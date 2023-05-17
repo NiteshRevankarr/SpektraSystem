@@ -1,24 +1,24 @@
-
+<div >
 
 
 <div class="calculator-container" >
-    <h1>Calculator</h1>
+    <h1 >Calculator</h1>
   
   
     <div>
-      <label for="num1">Number 1:</label> <br> 
+      <label for="num1">Enter the Number 1:</label> <br> 
       <input type="number" id="num1" [(ngModel)]="number1">
     </div>
   
   
     <div>
-      <label for="num2">Number 2:</label> <br>
+      <label for="num2">Enter the Number 2:</label> <br>
       <input type="number" id="num2" [(ngModel)]="number2">
     </div>
   
   
     <div>
-      <label>Result:</label> <br>
+      <label>Result :</label> <br>
       <input type="text" value="{{ result }}" disabled>
     </div> <br> <br>
     
@@ -26,15 +26,11 @@
     <button (click)="subtract()">Subtract</button> <br> <br>
     <button (click)="multiply()">Multiply</button> <br> <br>
     <button (click)="divide()">Divide</button> <br> <br>
+    <button [routerLink]="['/login']">Back to Login</button>
   </div>
   
 
-
-
-
-
-
-
+</div>
 
 
 

@@ -1,6 +1,16 @@
-.container
-{
-    display: flex;
-    justify-content: center;
+
+
+
+button {
+    width: 90px;
     
-}
+    background-color: #000;
+    color: #d24444;
+   
+   
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

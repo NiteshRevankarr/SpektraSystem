@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CalculationComponent } from './calculation/calculation.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CalComponent } from './cal/cal.component';
+
 
 
 @NgModule({
@@ -14,7 +14,7 @@ import { CalComponent } from './cal/cal.component';
     AppComponent,
     LoginComponent,
     CalculationComponent,
-    CalComponent,
+   
    
   ],
   imports: [

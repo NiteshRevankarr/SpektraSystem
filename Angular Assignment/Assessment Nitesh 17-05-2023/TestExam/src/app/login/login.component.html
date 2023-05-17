@@ -1,18 +1,26 @@
 
-<div style="width:320px; margin: 0 auto; border:1px solid black; padding:20px;margin-top: 100px;">
+
+<div style="width:320px; margin: 0 auto; border:1px solid rgb(50, 49, 49); padding:90px;margin-top: 70px;">
 
 
-<h1>Login Page</h1>
 <div >
-  
+  <h1 >Login Page</h1>
     <form action="" style="padding:20px;">
-      <label for="username">Username</label> <br>
-      <input type="text" class="form" id=" username" placeholder=" Enter the Username" required>
+
+      <label for="Username">Username</label>
+      <input type="text" class="form" id="Username" placeholder="Enter the Username" >
+<br> <br>
+
+      
+      <label for="Email">Email ID</label> 
+      <input type="text" class="form" id=" Email" placeholder=" Enter the Email" required>
       <br><br>
-      <label for="email"> Email Id</label> <br>
-      <input type="text" class="form" id="email" placeholder="Enter the Email " required> <br> <br>
+      <label for="email"> Password</label> 
+      <input type="text" class="form" id="email" placeholder="Enter the Password" required> <br> <br> <br>
       
 <button [routerLink]="['/calculation']">Login</button>
+
+
     
     </form>
   
