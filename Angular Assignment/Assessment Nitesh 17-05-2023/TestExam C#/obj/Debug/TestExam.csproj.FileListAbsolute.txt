@@ -1,0 +1,8 @@
+C:\Users\nites\source\repos\TestExam\bin\Debug\TestExam.exe.config
+C:\Users\nites\source\repos\TestExam\bin\Debug\TestExam.exe
+C:\Users\nites\source\repos\TestExam\bin\Debug\TestExam.pdb
+C:\Users\nites\source\repos\TestExam\obj\Debug\TestExam.csproj.AssemblyReference.cache
+C:\Users\nites\source\repos\TestExam\obj\Debug\TestExam.csproj.SuggestedBindingRedirects.cache
+C:\Users\nites\source\repos\TestExam\obj\Debug\TestExam.csproj.CoreCompileInputs.cache
+C:\Users\nites\source\repos\TestExam\obj\Debug\TestExam.exe
+C:\Users\nites\source\repos\TestExam\obj\Debug\TestExam.pdb
