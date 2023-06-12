@@ -1,0 +1,86 @@
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<body>
+  <div class="navbar">
+    <div class="navbar-logo">
+      <img src="/assets/Net-Med.png" alt="Logo">
+    </div>
+    
+    <div class="search-container">
+      <input class="search-input hidden" type="text" placeholder="Search for medicine">
+      <button class="search-button"><i class="fas fa-search"></i></button>
+    </div>
+    
+    <div class="navbar-icons">
+      <div class="navbar-icon">
+        <i class="fas fa-user"></i>
+        <span>Hello, Login</span>
+      </div>
+      <div class="navbar-icon" (click)="navigateToNextPage()">
+        <i class="fas fa-tags"></i>
+        <span>Offers</span>
+      </div>
+      <div class="navbar-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span>Cart</span>
+      </div>
+    </div>
+  </div>
+  
+  <hr class="nav-line">
+
+
+  <body *ngIf="product">
+    <div class="container">
+      
+      <div class="product-image">
+        <img [src]="product.image" alt="Denim Jeans" (click)="viewProductDetails(product.id)">
+      </div>
+      <div class="product-description">
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <p>Description:</p>
+        <p class="description">INLIFE Shatavari Extract Capsules contain safe, natural ingredients and are manufactured to high-quality standards. This Ayurvedic tonic helps support milk supply and aids in balancing the system. Acts as a nutritive tonic Shatavari encourages healthy production of milk in lactating mothers.</p>
+        
+        <p class="best-price">Best Price* ₹ {{ product.bestPrice }}</p>
+        <p class="mrp">MRP ₹ {{ product.mrpPrice }} </p>
+        <p>(Inclusive of all taxes)</p>
+        <p>* Applicable coupon to be applied during checkout</p>
+        <p>* This product cannot be returned for a refund or exchange.</p>
+        <p>* Mkt: Inlife Pharma Private Limited</p>
+        <p>* Country of Origin: India</p>
+        <p>* Delivery charges if applicable will be applied at checkout</p>
+          
+        <div class="add-to-cart">
+          <button (click)="addToCart()">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  

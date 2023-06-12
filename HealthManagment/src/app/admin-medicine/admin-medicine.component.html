@@ -1,0 +1,150 @@
+<div class="button-container">
+    <button type="button" class="btn-add" style="border: none; background: none; padding: 0;" data-bs-toggle="modal" data-bs-target="#addMedicineModal"><i class="fas fa-medkit" style="color: rgb(137, 190, 104);"></i></button>
+   </div>
+   <table class="table align-middle mb-0 bg-white">
+    <thead style="background-color: #92ebd6;">
+      <tr class="table-info">
+        <th scope="col">ID</th>
+        <th scope="col">Img</th>
+        <th scope="col">Medicine Name</th>
+        <th scope="col">Cat Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Exp.Date</th>
+        <th scope="col">Seller</th>
+        <th scope="col">Desc.</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of medicineData">
+        <td>{{row.id}}</td>
+        <td><img style="width: 150px; height:100px" src="{{row.image}}"></td>
+        <td>{{row.medname}}</td>
+        <td>{{row.categoryName}}</td>
+        <td>{{row.price}}</td>
+        <td>{{row.quantity}}</td>
+        <td>{{row.expirationDate}}</td>
+        <td>{{row.seller}}</td>
+        <td>{{row.description}}</td>
+  
+        <td>
+          <button (click)="onEdit(row)"  class="btn-edit btn-no-border"  type="button" data-bs-toggle="modal" data-bs-target="#editMedicineModal"><i class="fas fa-edit" style="color: rgb(129, 184, 239);"></i></button>&nbsp;&nbsp;
+          <button  (click)="deleteMedicine(row)"  class="btn-delete btn-no-border"><i class="fas fa-trash-alt" style="color: rgb(236, 134, 134);"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <!-- Add Medicine Modal -->
+  <div class="modal fade" id="addMedicineModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Medicine</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="addMedicineForm">
+            
+            <div class="mb-3">
+              <label for="exampleInputImage" class="form-label">Image</label>
+              <input type="text" formControlName="image" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputImage" class="form-label">Medicine Name</label>
+              <input type="text" formControlName="medname" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Category Name</label>
+              <select formControlName="categoryName" class="form-select" id="exampleInputPassword1">
+                <option *ngFor="let row of categoryData" [value]="row.categoryName">{{row.categoryName}}</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Price</label>
+              <input type="text" formControlName="price" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Quantity</label>
+              <input type="text" formControlName="quantity" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Expiration Date</label>
+              <input type="text" formControlName="expirationDate" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Seller</label>
+              <input type="text" formControlName="seller" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Description</label>
+              <input type="text" formControlName="description" class="form-control" id="exampleInputPassword1">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="postMedicineDetails()" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Edit Medicine Modal -->
+  
+  <div class="modal fade" id="editMedicineModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Medicine Details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="editMedicineForm"> 
+            <div class="mb-3">
+              <label for="exampleInputImage" class="form-label">Image</label>
+              <input type="text" formControlName="image" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputImage" class="form-label">Medicine Name</label>
+              <input type="text" formControlName="medname" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Category Name</label>
+              <select formControlName="categoryName" class="form-select" id="exampleInputPassword1">
+                <option *ngFor="let row of categoryData" [value]="row.categoryName">{{row.categoryName}}</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Price</label>
+              <input type="text" formControlName="price" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Quantity</label>
+              <input type="text" formControlName="quantity" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Expiration Date</label>
+              <input type="text" formControlName="expirationDate" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Seller</label>
+              <input type="text" formControlName="seller" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Description</label>
+              <input type="text" formControlName="description" class="form-control" id="exampleInputPassword1">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="updateMedicineDetails()" class="btn btn-primary">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  

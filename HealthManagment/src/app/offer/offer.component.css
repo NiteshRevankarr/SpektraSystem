@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    background-color: white;/* Change the background color to a light gray */
+  }
+  
+  .navbar-logo img {
+    width: 120px;
+    height: 70px;
+  }
+  
+  .navbar-icons {
+    display: flex;
+  }
+  
+  .navbar-icon {
+    margin-left: 25px; /* Increase margin-left for more space between icons */
+    color: #000000;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  
+  .navbar-icon i {
+    margin-right: 15px;
+  }
+  
+  
+  .navbar-icon span {
+    vertical-align: middle;
+  }
+  
+  .navbar-middle-text {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .navbar-middle-text p {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+  
+  .nav-line {
+    border-top: 1px solid #cccccc;
+  }
+  
+  .sub-navbar {
+    padding: 30px; /* Increase padding for height */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .sub-navbar li {
+    display: inline-block;
+    margin: 0 50px; /* Increase margin for space between names */
+    color: #333333;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  
+  .sub-navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  
+  
+  .sub-navbar li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333333;
+  }
+  
+  .sub-navbar img {
+    max-width: 24px;
+    max-height: 24px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    
+    transform: translateX(-50%);
+  }
+  
+  .search-input {
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    color: #000000;
+    margin-right: 20px;
+    width: 500px;
+  }
+  
+  .search-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: #1f1e1e;
+    color: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  
+  .search-description {
+    text-align: center;
+    margin-top: 5px; /* Adjust the margin-top value as per your preference */
+  }
+  
+  .search-description p {
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+  
+  

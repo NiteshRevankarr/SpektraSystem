@@ -1,0 +1,333 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    background-color: white;/* Change the background color to a light gray */
+  }
+  
+  .navbar-logo img {
+    width: 120px;
+    height: 70px;
+  }
+  
+  .navbar-icons {
+    display: flex;
+  }
+  
+  .navbar-icon {
+    margin-left: 25px; /* Increase margin-left for more space between icons */
+    color: #000000;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  
+  .navbar-icon i {
+    margin-right: 15px;
+  }
+  
+  
+  .navbar-icon span {
+    vertical-align: middle;
+  }
+  
+  .navbar-middle-text {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .navbar-middle-text p {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+  
+  .nav-line {
+    border-top: 1px solid #cccccc;
+  }
+  
+  .sub-navbar {
+    padding: 30px; /* Increase padding for height */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .sub-navbar li {
+    display: inline-block;
+    margin: 0 50px; /* Increase margin for space between names */
+    color: #333333;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  
+  .sub-navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  
+  
+  .sub-navbar li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333333;
+  }
+  
+  .sub-navbar img {
+    max-width: 24px;
+    max-height: 24px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    
+    transform: translateX(-50%);
+  }
+  
+  .search-input {
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    color: #000000;
+    margin-right: 20px;
+    width: 500px;
+  }
+  
+  .search-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: #1f1e1e;
+    color: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  
+  .search-description {
+    text-align: center;
+    margin-top: 5px; /* Adjust the margin-top value as per your preference */
+  }
+  
+  .search-description p {
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.image-container {
+    flex: 1;
+    margin-right: 10px;
+    background-color: rgb(238, 237, 237); /* Light grey background */
+}
+
+.form-container {
+    flex: 1;
+    background-color: rgba(128, 128, 128, 0.1); /* Light grey background */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+
+.form-container {
+  background: linear-gradient(120deg, rgb(0, 206, 209), #fda085);
+  animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.image-container {
+  margin-right: 30px;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+
+.form-row select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 15px;
+  transition: background-color 0.3s;
+  color: black; /* Set the text color to black */
+  background-color: #ffffff; /* Set the background color to white */
+}
+
+.form-row select:hover {
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+
+legend {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="tel"],
+form select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 15px;
+  transition: background-color 0.3s;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form input[type="text"]:hover,
+form input[type="tel"]:hover,
+form select:hover {
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+form input[type="checkbox"] {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+button[type="submit"] {
+  background-color: #080808;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #585555;
+}
+
+/* Side-by-side layout for package and test fields */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-row > div {
+  width: 48%;
+}
+
+
+#customerSpeakSection {
+  margin-top: 0%;
+}
+
+#customerSpeakHeading {
+  margin-top: 0;
+  margin-left: 50px;
+}
+
+.testimonial-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 2%;
+}
+
+
+.testimonial-card {
+  flex: 0 0 30%;
+  margin: 0 2% 2% 0;
+  animation: fadeIn 1s;
+}
+
+.testimonial-card:last-child {
+  margin-right: 0;
+}
+
+.box {
+  border: 1px solid gainsboro;
+  box-shadow: 5px 5px 5px gainsboro;
+  padding: 10%;
+  text-align: center;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+  background-color: white;
+
+}
+
+.box img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  
+}
+
+.testimonial-location {
+  margin-bottom: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
