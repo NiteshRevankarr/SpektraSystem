@@ -1,0 +1,282 @@
+<body>
+    <div class="navbar">
+      <div class="navbar-logo">
+        <img src="/assets/Net-Med.png" alt="Logo">
+      </div>
+      
+      <div class="search-container">
+        <input class="search-input" type="text" placeholder="Search for medicine">
+        <button class="search-button"><i class="fas fa-search"></i></button>
+      </div>
+      
+      <div class="navbar-icons">
+        <div class="navbar-icon" (click)="navigateToHomePagee()">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </div>
+        
+        <div class="navbar-icon" (click)="navigateToOfferPage()">
+          <i class="fas fa-tags"></i>
+          <span>Offers</span>
+        </div>
+        <div class="navbar-icon"(click)="navigateToOfferPage()">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Cart</span>
+        </div>
+      </div>
+    </div>
+  
+    <hr class="nav-line">
+    <div class="sub-navbar">
+        <ul>
+          <li>
+            <a routerLink="/medicine">
+              <img src="/assets/172011.png" alt="Medicine">
+              <span>Medicine</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/wellness">
+              <img src="/assets/ICON-Corp-Wellness-01.png" alt="Wellness">
+              <span>Wellness</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/labtest">
+              <img src="/assets/lab-technician.png" alt="Lab Test">
+              <span>Lab Test</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/beauty">
+              <img src="/assets/3378785.png" alt="Beauty">
+              <span>Beauty</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+
+      <div class="gallery">
+        <div class="gallery-container" [style.transform]="'translateX(' + translateX + '%)'">
+          <div class="gallery-item" *ngFor="let image of images">
+            <img [src]="image.url" [alt]="image.alt">
+          </div>
+        </div>
+        <div class="arrow arrow-left" (click)="slide('left')">
+          <i class="fa-solid fa-circle-chevron-left"></i>
+        </div>
+        <div class="dots">
+          <span class="dot" *ngFor="let image of images; let i = index" [class.active]="i === currentIndex"></span>
+        </div>
+      </div>
+      
+      <br> <br> <br>
+      <div class="card">
+        <h2>TOP FEATURED BRANDS</h2>
+        <div class="brand-container">
+          <div class="brand-item" *ngFor="let brand of brands">
+            <div class="brand-box">
+              <img [src]="brand.url" [alt]="brand.alt" class="brand-image">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+        <br><br>
+      
+        <div id="main-med-sec" >
+          <div id="head-sec">
+            <h2>MegaMart</h2>
+            <p style="font-weight: bold;">View All &gt;</p>
+      
+          </div>
+          <div id="med-row">
+            <div class="med-cards" *ngFor="let product of products; let i = index">
+              <div class="discount-banner">Get {{ product.discount }} off</div>
+              <img [src]="product.image" alt="">
+              <h3>{{ product.name }}</h3>
+              <p class="description">{{ product.description }}</p>
+              <p class="best-price">Best Price* Rs.{{ product.price }}</p>  
+              <p class="mrp"><del>MRP Rs.{{ product.mrp }}</del></p>
+              <div class="quantity-control" style="margin-left: 50px;">
+                <button class="decrement-button" (click)="decrementQuantity(i)">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <div class="quantity-display">
+                  {{ product.quantity }}
+                </div>
+                <button class="increment-button" (click)="incrementQuantity(i)">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+              <br>
+            
+              <button class="add-to-cart" (click)="addToCart()">ADD TO CART</button>
+            </div>
+          </div>
+        </div>
+        
+        <br> <br>
+                  
+<br> <br> <br>
+
+<div class="card">
+  <h2>TOP FEATURED BRANDS</h2>
+  <div class="brand-container">
+    <div class="brand-item" *ngFor="let brand of brandss">
+      <div class="brand-box">
+        <img [src]="brand.url" [alt]="brand.alt" class="brand-image">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <br><br>
+
+  <div id="main-med-sec" >
+    <div id="head-sec">
+      <h2>MegaMart</h2>
+      <p style="font-weight: bold;">View All &gt;</p>
+
+    </div>
+    <div id="med-row">
+      <div class="med-cards" *ngFor="let product of productss; let i = index">
+        <div class="discount-banner">Get {{ product.discount }} off</div>
+        <img [src]="product.image" alt="">
+        <h3>{{ product.name }}</h3>
+        <p class="description">{{ product.description }}</p>
+        <p class="best-price">Best Price* Rs.{{ product.price }}</p>  
+        <p class="mrp"><del>MRP Rs.{{ product.mrp }}</del></p>
+        <div class="quantity-control" style="margin-left: 50px;">
+          <button class="decrement-button" (click)="decrementQuantityy(i)">
+            <i class="fa-solid fa-minus"></i>
+          </button>
+          <div class="quantity-display">
+            {{ product.quantity }}
+          </div>
+          <button class="increment-button" (click)="incrementQuantityy(i)">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <br>
+      
+        <button class="add-to-cart" (click)="addToCartt()">ADD TO CART</button>
+      </div>
+    </div>
+  </div>
+  
+  <br> <br>
+            
+<br> <br> <br>
+
+
+      <footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-column">
+              <h3>COMPANY</h3>
+              <ul>
+                <li><a routerLink="/about">About NetLife</a></li>
+                <li><a href="#">Customers Speak</a></li>
+                <li><a href="#">In the News</a></li>
+                <li><a href="#">Career</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-column" style="margin-left: 100px;">
+              <h3>OUR POLICIES</h3>
+              <ul>
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Fees and Payments Policy</a></li>
+                <li><a href="#">Shipping and Delivery Policy</a></li>
+                <li><a href="#">Return, Refund and Cancellation Policy</a></li>
+              </ul>
+            </div>
+            <div class="footer-column" style="margin-left: 150px;">
+              <h3>SHOPPING</h3>
+              <ul>
+                <li><a href="#">Browse by A-Z</a></li>
+                <li><a href="#">Browse by Manufacturers</a></li>
+                <li><a href="#">Health Articles</a></li>
+                <li><a href="#">Offers / Coupons</a></li>
+                <li><a href="#">FAQs</a></li>
+              </ul>
+            </div>
+            <div class="footer-column" style="margin-left: 100px;">
+              <h3>SOCIAL</h3>
+              <ul>
+                <li><a href="#"><i class="fas fa-users"></i> Patients Alike</a></li>
+                <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i> Youtube</a></li>
+                <li><a href="#"><i class="fas fa-hand-holding-usd"></i> Refer &amp; Earn</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom" style="text-align: center;">
+            <p>Subscribe to our newsletter and get a free subscription to our health and fitness tips, and stay tuned to our latest offers.</p>
+            <div style="display: inline-block;">
+              <form action="#" method="post">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <input type="submit" value="Subscribe">
+              </form>
+            </div><br><br>
+          <p style="font-weight: bold;">&copy; 2023 NetLife. All rights reserved.</p>
+
+          </div>
+        </div>
+        
+      </footer>
+    </body>
+    
+    
+          
+          
+    
+         
+          
+          
+          
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+     
+
+
+
+
+
+      

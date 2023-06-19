@@ -1,0 +1,70 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #sidebar a {
+    text-decoration: none;
+}
+#sidebar a {
+  text-decoration: none;
+}
+
+
+
+  th,
+  td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .edit-toggle {
+    display: none;
+  }
+  
+  .edit-toggle input[type="text"],
+  .edit-toggle input[type="number"],
+  .edit-toggle input[type="date"] {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  
+  .edit-toggle label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .edit-toggle .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .edit-toggle .actions button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .edit-toggle .actions button.cancel {
+    background-color: #ff3333;
+  }
+  
+  .actions button {
+    margin-right: 5px;
+  }
+  
+  .actions img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  

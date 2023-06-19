@@ -1,0 +1,173 @@
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<body>
+  <body>
+    <div class="navbar">
+      <div class="navbar-logo">
+        <img src="/assets/Net-Med.png" alt="Logo">
+      </div>
+      
+      <div class="search-container">
+        <input class="search-input" type="text" placeholder="Search for medicine">
+        <button class="search-button"><i class="fas fa-search"></i></button>
+      </div>
+      
+      <div class="navbar-icons">
+        <div class="navbar-icon" (click)="navigateToHomePagee()">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </div>
+        
+        <div class="navbar-icon" (click)="navigateToOfferPage()">
+          <i class="fas fa-tags"></i>
+          <span>Offers</span>
+        </div>
+        <div class="navbar-icon" (click)="navigateToCartPage()">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Cart</span>
+        </div>
+      </div>
+    </div>
+  
+  
+    
+    <hr class="nav-line">
+    <div class="sub-navbar">
+      <ul>
+        <li>
+          <a routerLink="/medicine">
+            <img src="/assets/172011.png" alt="Medicine">
+            <span>Medicine</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/wellness">
+            <img src="/assets/ICON-Corp-Wellness-01.png" alt="Wellness">
+            <span>Wellness</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/labtest">
+            <img src="/assets/lab-technician.png" alt="Lab Test">
+            <span>Lab Test</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/beauty">
+            <img src="/assets/3378785.png" alt="Beauty">
+            <span>Beauty</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  <!-- cards-->
+<div class="container">
+  <div class="card-deck" >
+    <div class="card">
+      <img src="https://www.netmeds.com/images/cms/offers/1686203956_M_Landing_Banner.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">CELEBRATE20<br>
+            <small class="text-muted" style="text-align: left;">coupon code <span  style="text-align: right; color:rgb(26, 26, 27);background-color:rgb(43, 46, 46);"><p>COPY CODE</p></span>
+            </small>
+        </h5>
+             <p class="card-text">Today only! Get Flat 20% OFF* (max. discount: Rs. 2000) on PrePaid/COD medicine orders & 50% NMS SuperCash* (max. cashback: Rs. 1000) on ‘PrePaid’ medicine orders. *Minimum order (along with ANY other products) required: Rs 1299. *T&C</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"><span style="color: green;font-size: large;">VALID TILL 08 JUN 2023</span> 
+            <aside style="text-align:right ;">View Details</aside>
+        </small>
+        
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://www.netmeds.com/images/cms/offers/1686156101_Mobile_Landing_Banner.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">CELEBRATE18<br>
+            <small class="text-muted" style="text-align: left;">coupon code <span  style="text-align: right; color:rgb(26, 26, 27);background-color:rgb(43, 46, 46);"><p>COPY CODE</p></span>
+            </small>
+       
+            </h5>
+        <p class="card-text">Today only! Get Flat 18% OFF* (max. discount: Rs. 2000) on PrePaid/COD medicine orders & 50% NMS SuperCash* (max. cashback: Rs. 1000) on ‘PrePaid’ medicine orders. *Minimum order (along with ANY other products) required: Rs 999. *T&C</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"><span style="color: green;font-size: large;">VALID TILL 30 JUN 2023</span>
+            <aside style="text-align:right ;">View Details</aside>
+        </small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://www.netmeds.com/images/cms/offers/1685719483_Mobile_Landing_Bannerdsgs.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">NMSNEW<br>
+            <small class="text-muted" style="text-align: left;">coupon code <span  style="text-align: right; color:rgb(26, 26, 27);background-color:rgb(43, 46, 46);"><p>COPY CODE</p></span>
+            </small>
+   
+            </h5>
+        <p class="card-text">From 1st to 30th June 2023, get Flat 25% OFF* (max discount: Rs 700) on Your First Pre-Paid/COD Medicine order, AND upon delivery, a 25% NMS SuperCash* (max cashback: Rs. 1000) on ‘pre-paid’ medicine order. *Minimum order of medicines (along with ANY other products) required: Rs 1249. *T&C
+
+        </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"><span style="color: green;font-size: large;">VALID TILL 30 JUN 2023</span>
+            <aside style="text-align:right ;">View Details</aside>
+        </small>
+      </div>
+    </div>
+  </div>
+  </div>
+<br><br>
+
+<!--2nd row -->
+<div class="container">
+  <div class="card-deck">
+    <div class="card">
+      <img src="https://www.netmeds.com/images/cms/offers/1685719523_Mobile_Landing_Bannerfsffg.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">NMS18<br>
+            <small class="text-muted" style="text-align: left;">coupon code <span  style="text-align: right; color:rgb(26, 26, 27);background-color:rgb(43, 46, 46);"><p>COPY CODE</p></span>
+            </small>
+        </h5>
+             <p class="card-text">From 1st to 30th June 2023, get Flat 18% OFF* (max. discount: Rs. 2000) on PrePaid/COD medicine orders & 20% NMS SuperCash* (max. cashback: Rs. 1000) on ‘PrePaid’ medicine orders. *Minimum order (along with ANY other products) required: Rs 1499. *T&C</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"><span style="color: green;font-size: large;">VALID TILL 08 JUN 2023</span> 
+            <aside style="text-align:right ;">View Details</aside>
+        </small>
+        
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://www.netmeds.com/images/cms/offers/1685550790_Mobile_Landing_Bannersweddd.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">NMS15<br>
+            <small class="text-muted" style="text-align: left;">coupon code <span  style="text-align: right; color:rgb(26, 26, 27);background-color:rgb(43, 46, 46);"><p>COPY CODE</p></span>
+            </small>
+       
+            </h5>
+        <p class="card-text">From 01st to 30th June 2023, get Flat 15% OFF* (max. discount: Rs. 2000) on PrePaid/COD medicine orders & 30% NMS SuperCash* (max. cashback: Rs. 1000) on ‘PrePaid’ medicine orders. *Minimum order (along with ANY other products) required: Rs 699. *T&C</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"><span style="color: green;font-size: large;">VALID TILL 30 JUN 2023</span>
+            <aside style="text-align:right ;">View Details</aside>
+        </small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://www.netmeds.com/images/cms/offers/1685553184_Mobile_Landing_Banner.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">NMS10<br>
+            <small class="text-muted" style="text-align: left;">coupon code <span  style="text-align: right; color:rgb(26, 26, 27);background-color:rgb(43, 46, 46);"><p>COPY CODE</p></span>
+            </small>
+   
+            </h5>
+        <p class="card-text">From 1st to 30th June 2023, get Flat 10% OFF* (max. discount: Rs. 2000) on PrePaid/COD medicine orders & 20% NMS SuperCash* (max. cashback: Rs. 1000) on ‘PrePaid’ medicine orders. *Minimum order (along with ANY other products) required: Rs 499. *T&C</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"><span style="color: green;font-size: large;">VALID TILL 30 JUN 2023</span>
+            <aside style="text-align:right ;">View Details</aside>
+        </small>
+      </div>
+    </div>
+  </div></div>

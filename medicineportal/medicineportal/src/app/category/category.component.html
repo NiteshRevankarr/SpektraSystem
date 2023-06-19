@@ -1,0 +1,184 @@
+<!-- <p>dashboard works!</p> -->
+<!-- SIDEBAR                    /// updated all codes -->
+<section id="sidebar" [ngClass]="status ? 'hide' : ''">
+  <a href="#" class="brand">
+    <i class='bx bxs-smile'></i>
+    <span class="text">Welcome</span>
+  
+  </a>
+  <ul class="side-menu top">
+    <li class="active">
+      <a href="/customerorder">
+        <i class='bx bxs-dashboard' ></i>
+        <span class="text">Orders Details</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/category">
+          <i class="bx bxs-shopping-bag-alt"></i>
+          <span class="text">Category</span>
+        </a>
+    </li>
+    <li>
+      <a routerLink="/adminmedicine">
+        <i class='bx bxs-doughnut-chart' ></i>
+        <span class="text">Medicine</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/customer">
+        <i class='bx bxs-message-dots' ></i>
+        <span class="text">Customers</span>
+      </a>
+    </li>
+    
+    <li>
+      <a routerLink="/adminteam">
+        <i class='bx bxs-group' ></i>
+        <span class="text">Team</span>
+      </a>
+    </li>
+  </ul>
+  <ul class="side-menu">
+    <li>
+      <a routerLink="/settings">
+        <i class='bx bxs-cog' ></i>
+        <span class="text">Settings</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="logout">
+        <i class='bx bxs-log-out-circle' ></i>
+        <span class="text">Logout</span>
+      </a>
+    </li>
+  </ul>
+</section>
+<!-- SIDEBAR -->
+  
+  
+  
+  <!-- CONTENT -->
+  <section id="content">
+    <!-- NAVBAR -->
+    <nav>
+      <i (click)="addToggle()" class='bx bx-menu' ></i>
+      <a href="#" class="nav-link">Categories</a>
+      <form action="#">
+        <div class="form-input">
+          <input type="search" placeholder="Search...">
+          <button type="button" class="search-btn"><i class='bx bx-search' ></i></button>
+        </div>
+      </form>
+     
+    
+    </nav>
+    <!-- NAVBAR -->
+  
+    <!-- MAIN -->
+    <main>
+      <div class="head-title">
+        <div class="left">
+          <h1>Admin-Dashboard</h1>
+          <ul class="breadcrumb">
+            <li>
+              <a href="#">Dashboard</a>
+            </li>
+            <li><i class='bx bx-chevron-right' ></i></li>
+            <li>
+              <a class="active" href="#">Home</a>
+            </li>
+          </ul>
+        </div> 
+      </div>
+      <ul class="box-info">
+        <li>
+          <i class='bx bxs-shopping-bag-alt'></i>
+          <span class="text">
+              <h3>{{ totalOrders }}</h3>
+              <p>New Order</p>
+          </span>
+      </li>
+
+
+
+      <li>
+        <i class='bx bxs-group'></i>
+        <span class="text">
+          <h3>{{ userCount }}</h3>
+          <p>Registered Users</p>
+        </span>
+      </li>
+      
+    
+    <li>
+      <i class='bx bxs-shopping-bag-alt'></i>
+      <span class="text">
+          <h3>&#8377; {{ totalSales }}</h3>
+          <p>Total Sales</p>
+      </span>
+  </li>
+       
+        
+      </ul>
+
+
+
+        
+        <div class="table-data">
+            <div class="order">
+                <div class="button-container">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn-add"
+                        style="border: none; background: none; ">
+                        <i class="fa fa-plus fa-2x " style="margin-left:1100px;"></i>
+                         
+                    </button>
+                </div>
+                <table class="table align-middle mb-0 bg-white">
+                    <thead>
+                        <tr class="table-info">
+                            <th> Category Id</th>
+                            <th>Category Name</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of categoryData">
+                            <td>{{row.categoryID}}</td>
+                            <td>{{row.categoryName}}</td>
+                            <td>
+                                <button (click)="deleteCategory(row)" class="btn-delete btn-no-border">
+                                    <i class="fa fa-trash-alt" style="color: rgb(236, 134, 134);"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Category Details</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form [formGroup]="formValue">
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Category Name</label>
+                                <input type="text" formControlName="categoryName" class="form-control"
+                                    id="exampleInputPassword1">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="cancle" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Close</button>
+                        <button type="button" (click)="postCategoryDetails()" class="btn btn-primary">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</section>  

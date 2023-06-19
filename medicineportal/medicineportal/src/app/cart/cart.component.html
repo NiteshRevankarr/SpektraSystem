@@ -1,0 +1,119 @@
+<body>
+    <section style="margin: 40px" *ngIf="cartItems">
+      <div class="heading">
+        <h2>Order Summary</h2>
+      </div>
+      <div class="maindiv">
+        <div class="leftdiv">
+          <div class="banner">
+            <img width="100%" height="150px" src="Picture.png" alt="">
+          </div>
+  
+       
+          <div class="products" *ngFor="let item of cartItems">
+            <div class="productimg" style="width: 500px;">
+              <img style="height: 50px ; width: 50px;" [src]="item.image" alt="">
+            </div>
+            <div class="desp">
+              <h3>{{ item.name }}</h3>  
+              <p>{{ item.description }}</p>
+              <p>Price: Rs.{{ item.price }}</p>
+  
+              <p style="font-size: 10px;">Delivery between june 27- june 30</p>
+              <p style="font-size: 12px;">Quantity:</p>
+              <button (click)="decreaseQuantity(item)">-</button>
+              {{ item.quantity }}
+              <button (click)="increaseQuantity(item)">+</button>
+            </div>
+            <div class="options">
+              <button (click)="removeItem(item.id)">Remove</button> <br>
+            </div>
+          </div>
+  
+          <div class="addmore">
+            <a (click)="navigateToProductPage()">Add more items</a>
+  
+            <p>+</p>
+          </div>
+        </div>
+        
+      <div class="container">
+    
+    <div class="rightdiv" style="height: 550px;"> 
+    <div class="rightdiv" style="height: 600px;"> 
+        <div class="payment" style="height: 450px; margin-left: 100px;">
+          <button (click)="addDeliveryAddress()" class="add-address-button">Add Delivery Address</button>
+   <br><br>
+          <div class="payment-det" >
+            <p>MRP Total</p>
+            <p>Rs.{{ getTotal() }}</p>
+          </div>
+          <div class="payment-det">
+            <p>Additional Discount</p>
+            <p>Rs.{{ additionalDiscount }}</p>
+          </div>
+          <div class="payment-det">
+            <p>Total Amount</p>
+            <p>Rs.{{ getTotal() - additionalDiscount }}</p>
+          </div>
+          <div class="payment-det">
+            <p>Shipping Charges</p>
+            <p>Rs.{{ shippingCharges }}</p>
+          </div>
+          <hr>
+          <div class="payment-det">
+            <h3 style="color: rgb(0, 186, 203);">Total Payable <br> </h3>
+            <h3 style="color: rgb(0, 186, 203);">Rs.{{ getTotal() - additionalDiscount + shippingCharges }}</h3>
+          </div>
+          <div class="payment-option">
+            <input type="radio" id="wallet" name="payment" value="wallet" (click)="paymentOption('wallet')">
+            <label for="wallet">Wallet</label><br>
+            <input type="radio" id="cod" name="payment" value="cod" (click)="paymentOption('cod')">
+            <label for="cod">Cash on Delivery</label><br>
+            <p *ngIf="alertMessage" style="color: red;">{{ alertMessage }}</p>
+            <button (click)="togglePaymentDetails()" class="proceed-button">Proceed</button>
+          
+          </div>
+        </div>
+      </div>
+  
+   
+      
+  
+     
+      <div class="payment-details-container" [ngClass]="{'visible': showPaymentDetails}">
+        <button class="close-button" (click)="closeSideMenu()">&times;</button>
+        <form [formGroup]="paymentDetailsForm" (ngSubmit)="onSubmit()">
+          <h2>Payment Details</h2>
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" formControlName="fullName" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" formControlName="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" formControlName="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" formControlName="address" required>
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" formControlName="city" required>
+          </div>
+          <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" id="state" formControlName="state" required>
+          </div>
+          <div class="form-group">
+            <label for="zip">Zip Code</label>
+            <input type="text" id="zip" formControlName="zip" required>
+          </div>
+          <button type="submit" [disabled]="!paymentDetailsForm.valid">Save</button>
+        </form>
+      </div>
+  
