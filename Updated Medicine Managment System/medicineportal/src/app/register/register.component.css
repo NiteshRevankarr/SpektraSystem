@@ -1,0 +1,89 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+.form-outline {
+    position: relative;
+  }
+  
+  .form-outline input {
+    padding-top: 1.5rem; /* Adjust the value as needed */
+  }
+  
+  .form-outline label {
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    transition: all 0.2s ease;
+ }
+  
+  .form-outline input:focus + label,
+  .form-outline input:not(:placeholder-shown) + label {
+    top: -1.5rem; /* Adjust the value as needed */
+    font-size: 0.8rem; /* Adjust the value as needed */
+    color: #6c757d;
+  }
+  
+
+  .form-outline {
+    position: relative;
+  }
+  
+  .form-outline input {
+    padding-top: 1.5rem;
+  }
+  
+  .form-outline label {
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    transition: all 0.2s ease;
+  }
+  
+  .form-outline input:focus + label,
+  .form-outline input:not(:placeholder-shown) + label {
+    top: -1.5rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+  }
+  
+  .form-outline .error-message {
+    display: none;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: red;
+  }
+  
+  .form-outline input.ng-invalid + label + .error-message {
+    display: block;
+  }
+  
+  footer {
+    position:absolute;
+    bottom: 10;
+    left: 0;
+    width: 100%;
+     }
+  
+  footer div {
+    margin: 0 auto; /* Center horizontally */
+  }
+  
+  @media (min-width: 768px) {
+    /* Apply the following styles for medium-sized screens and above */
+    footer div {
+      max-width: 1000px; /* Adjust as needed */
+    }
+  }
+

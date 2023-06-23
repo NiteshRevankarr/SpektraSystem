@@ -1,0 +1,332 @@
+<!-- <p>dashboard works!</p> -->
+<!-- SIDEBAR                    /// updated all codes -->
+<section id="sidebar" [ngClass]="status ? 'hide' : ''">
+  <a href="#" class="brand">
+    <i class='bx bxs-smile'></i>
+    <span class="text">Welcome</span>
+  
+  </a>
+  <ul class="side-menu top">
+    <li class="active">
+      <a href="/customerorder">
+        <i class='bx bxs-dashboard' ></i>
+        <span class="text">Orders Details</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/category">
+          <i class="bx bxs-shopping-bag-alt"></i>
+          <span class="text">Category</span>
+        </a>
+    </li>
+    <li>
+      <a routerLink="/adminmedicine">
+        <i class='bx bxs-doughnut-chart' ></i>
+        <span class="text">Medicine</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/customer">
+        <i class='bx bxs-message-dots' ></i>
+        <span class="text">Customers</span>
+      </a>
+    </li>
+    
+    <li>
+      <a routerLink="/adminteam">
+        <i class='bx bxs-group' ></i>
+        <span class="text">Team</span>
+      </a>
+    </li>
+  </ul>
+  <ul class="side-menu">
+    <li>
+      <a routerLink="/settings">
+        <i class='bx bxs-cog' ></i>
+        <span class="text">Settings</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="logout">
+        <i class='bx bxs-log-out-circle' ></i>
+        <span class="text">Logout</span>
+      </a>
+    </li>
+  </ul>
+</section>
+<!-- SIDEBAR -->
+
+
+<!-- CONTENT -->
+<section id="content">
+  <!-- NAVBAR -->
+  <nav>
+    <i (click)="addToggle()" class='bx bx-menu'></i>
+    <a href="#" class="nav-link">Categories</a>
+    <form action="#">
+      <div class="form-input">
+        <input type="search" placeholder="Search...">
+        <button type="button" class="search-btn"><i class='bx bx-search'></i></button>
+      </div>
+    </form>
+ 
+  </nav>
+  <!-- NAVBAR -->
+
+  <!-- MAIN -->
+  <main>
+    <div class="head-title">
+      <div class="left">
+        <h1>Admin-Dashboard</h1>
+        <ul class="breadcrumb">
+          <li>
+            <a href="#">Dashboard</a>
+          </li>
+          <li><i class='bx bx-chevron-right'></i></li>
+          <li>
+            <a class="active" href="#">Home</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <ul class="box-info">
+      <li>
+        <i class='bx bxs-shopping-bag-alt'></i>
+        <span class="text">
+            <h3>{{ totalOrders }}</h3>
+            <p>New Order</p>
+        </span>
+    </li>
+
+
+
+    <li>
+      <i class='bx bxs-group'></i>
+      <span class="text">
+        <h3>{{ userCount }}</h3>
+        <p>Registered Users</p>
+      </span>
+    </li>
+    
+  
+  <li>
+    <i class='bx bxs-shopping-bag-alt'></i>
+    <span class="text">
+        <h3>&#8377; {{ totalSales }}</h3>
+        <p>Total Sales</p>
+    </span>
+</li>
+     
+      
+</ul>
+  
+<div class="table-data">
+  <div class="order">
+<div class="button-container">
+  <button type="button" class="btn-add" style="border: none; background: none; padding: 0;" data-bs-toggle="modal" data-bs-target="#addMedicineModal"><i class="fa-solid fa-suitcase-medical" style="color: rgb(42, 56, 33);"></i></button><br>
+</div>
+<table class="table align-middle mb-0 bg-white">
+  <thead style="background-color: #a6edd3;">
+    <tr class="table-info">
+      <th scope="col">ID</th>
+      <th scope="col">Img</th>
+      <th scope="col">Name</th>
+      <!-- <th scope="col">C.ID</th> -->
+      <th scope="col">C.Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Exp.Date</th>
+      <th scope="col">Seller</th>
+      <th scope="col">Desc.</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of medicineData">
+      <td  style="height: 200px;">{{row.medicineID}}</td>
+      <td><img style="width: 100px; height:90px" src="{{row.image}}"></td>
+      <td>{{row.name}}</td>
+      <!-- <td>{{row.categoryID}}</td> -->
+      <td>{{row.categoryName}}</td>
+      <td>{{row.price}}</td>
+      <td>{{row.quantity}}</td>
+      <td>{{row.expirationDate}}</td>
+      <td>{{row.seller}}</td>
+      <td>{{row.description}}</td>
+      <td>
+        <button style="border: none; background: none; " class="btn-edit btn-no-border" (click)="onEdit(row)"  class="btn-edit btn-no-border"  type="button" data-bs-toggle="modal" data-bs-target="#editMedicineModal"><i class="fas fa-edit" style="color: rgb(129, 184, 239);"></i></button>&nbsp;&nbsp;
+        <button style="border: none; background: none; " class="btn-delete btn-no-border" (click)="deleteMedicine(row)"  class="btn-delete btn-no-border"><i class="fas fa-trash-alt" style="color: rgb(236, 134, 134);"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+
+
+
+
+
+<!-- Add Medicine Modal -->
+
+<div class="modal fade" id="addMedicineModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Medicine</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="addMedicineForm" enctype="multipart/form-data">
+          
+          
+          <!-- <div class="mb-3">
+            <label for="exampleInputImage" class="form-label">Image</label>
+            <input type="text" formControlName="image" class="form-control" id="exampleInputImage">
+          </div> -->
+          
+          <div class="mb-3">
+            <label for="exampleInputImage" class="form-label">Image</label>
+            <input type="file" formControlName="image" class="form-control" id="exampleInputImage" (change)="onImageSelected($event, 'addMedicineForm')" #fileInputAdd accept="image/*">
+          </div>
+
+
+          
+           <div class="mb-3">
+            <label for="exampleInputImage" class="form-label">Medicine Name</label>
+            <input type="text" formControlName="name" class="form-control" id="exampleInputPassword1">
+          </div> 
+     
+          <!-- <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Category ID</label>
+            <select formControlName="categoryID" class="form-select" id="exampleInputPassword1">
+              <option *ngFor="let row of categoryData" [value]="row.categoryID">{{row.categoryID}}</option>
+            </select>
+          </div> -->
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Category Name</label>
+            <select formControlName="categoryName" class="form-select" id="exampleInputPassword1">
+              <option *ngFor="let row of categoryData" [value]="row.categoryName">{{row.categoryName}}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Price</label>
+            <input type="number" formControlName="price" class="form-control" id="exampleInputPassword1" min="0">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Quantity</label>
+            <input type="number" formControlName="quantity" class="form-control" id="exampleInputPassword1" min="0">
+          </div>
+          <div class="mb-3">
+            <label for="expirationDate" class="form-label">Expiration Date</label>
+            <input type="datetime-local" formControlName="expirationDate" class="form-control" id="expirationDate">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Seller</label>
+            <input type="text" formControlName="seller" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Description</label>
+            <input type="text" formControlName="description" class="form-control" id="exampleInputPassword1">
+          </div>
+        </form>
+      </div>
+
+     
+    
+    <div class="modal-footer">
+      <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal" (click)="clearFileInput('fileInputAdd')">Close</button>
+      <button type="button" (click)="postMedicineDetails()" class="btn btn-primary">Add</button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Edit Medicine Modal -->
+<div class="modal fade" id="editMedicineModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Medicine Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="editMedicineForm" enctype="multipart/form-data">
+       
+          
+
+          <div class="mb-3">
+            <label for="exampleInputImage" class="form-label">Image</label>
+            <!-- <input type="file" formControlName="image" class="form-control" id="exampleInputImage" (change)="onImageSelected($event, 'addMedicineForm')" #fileInputAdd> -->
+            <!-- <input type="file" formControlName="image" class="form-control" id="exampleInputImage" (change)="onImageSelected($event, 'editMedicineForm')" #fileInputEdit> -->
+            <input type="file" formControlName="image" name="image" class="form-control" id="exampleInputImage" (change)="onImageSelected1($event, 'editMedicineForm')" #fileInputEdit>
+
+          </div>
+
+
+          <!-- <div class="mb-3">
+            <label for="exampleInputImage" class="form-label">Image</label>
+            <input type="text" formControlName="image" class="form-control" id="exampleInputImage">
+          </div> -->
+          
+          <!-- <div class="mb-3">
+            <label for="exampleInputImage" class="form-label">Medicine Name</label>
+            <input type="text" formControlName="name" class="form-control" id="exampleInputPassword1">
+          </div> -->
+
+          <div class="mb-3">
+            <label for="exampleInputImage" class="form-label">Medicine Name</label>
+            <input type="text" formControlName="name" class="form-control" id="exampleInputImage">
+          </div>
+          
+<!-- 
+           <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Category ID</label>
+      <select formControlName="categoryID" class="form-select" id="exampleInputPassword1">
+        <option *ngFor="let row of categoryData" [value]="row.categoryID">{{row.categoryID}}</option>
+      </select>
+    </div> -->
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Category Name</label>
+            <select formControlName="categoryName" class="form-select" id="exampleInputPassword1">
+              <option *ngFor="let row of categoryData" [value]="row.categoryName">{{row.categoryName}}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Price</label>
+            <input type="number" formControlName="price" class="form-control" id="exampleInputPassword1" min="0">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Quantity</label>
+            <input type="number" formControlName="quantity" class="form-control" id="exampleInputPassword1" min="0">
+          </div>
+          <div class="mb-3">
+            <label for="expirationDate" class="form-label">Expiration Date</label>
+            <input type="datetime-local" formControlName="expirationDate" class="form-control" id="expirationDate">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Seller</label>
+            <input type="text" formControlName="seller" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Description</label>
+            <input type="text" formControlName="description" class="form-control" id="exampleInputPassword1">
+          </div>
+        </form>
+     
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal" (click)="clearFileInput('fileInputEdit')">Close</button>
+        <button type="button" (click)="updateMedicineDetails()" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 

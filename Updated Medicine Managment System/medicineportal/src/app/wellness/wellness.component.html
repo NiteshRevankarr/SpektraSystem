@@ -1,0 +1,329 @@
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<body>
+    <div class="navbar">
+      <div class="navbar-logo">
+        <img src="/assets/Net-Med.png" alt="Logo">
+      </div>
+      
+      <div class="search-container">
+        <input class="search-input" type="text" placeholder="Search for medicine">
+        <button class="search-button"><i class="fas fa-search"></i></button>
+      </div>
+      
+      <div class="navbar-icons">
+        <div class="navbar-icon" (click)="navigateToHomePagee()">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </div>
+        
+        <div class="navbar-icon" (click)="navigateToOfferPage()">
+          <i class="fas fa-tags"></i>
+          <span>Offers</span>
+        </div>
+        <div class="navbar-icon"(click)="navigateToCartPage()">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Cart</span>
+        </div>
+      </div>
+    </div>
+  
+    <hr class="nav-line">
+    <div class="sub-navbar">
+        <ul>
+          <li>
+            <a routerLink="/medicine">
+              <img src="/assets/172011.png" alt="Medicine">
+              <span>Medicine</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/wellness">
+              <img src="/assets/ICON-Corp-Wellness-01.png" alt="Wellness">
+              <span>Wellness</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/labtest">
+              <img src="/assets/lab-technician.png" alt="Lab Test">
+              <span>Lab Test</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/beauty">
+              <img src="/assets/3378785.png" alt="Beauty">
+              <span>Beauty</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+
+      <div class="gallery">
+        <div class="gallery-container" [style.transform]="'translateX(' + translateX + '%)'">
+          <div class="gallery-item" *ngFor="let image of images">
+            <img [src]="image.url" [alt]="image.alt">
+          </div>
+        </div>
+        <div class="arrow arrow-left" (click)="slide('left')">
+          <i class="fa-solid fa-circle-chevron-left"></i>
+        </div>
+        <div class="dots">
+          <span class="dot" *ngFor="let image of images; let i = index" [class.active]="i === currentIndex"></span>
+        </div>
+      </div>
+    
+
+      <br> <br>
+
+
+      <div class="card">
+        <h2>Health Concerns </h2>
+        <div class="brand-container">
+          <div class="brand-item" *ngFor="let brand of brands">
+            <div class="brand-box">
+              <img [src]="brand.url" [alt]="brand.alt" class="brand-image">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      
+<br> <br> <br>
+
+  <div id="main-med-sec" >
+    <div id="head-sec">
+      <h2>MegaMart</h2>
+      <p style="font-weight: bold;">View All &gt;</p>
+  
+    </div>
+    <div id="med-row">
+      <div class="med-cards" *ngFor="let product of products; let i = index">
+        <div class="discount-banner">Get {{ product.discount }} off</div>
+        <img [src]="product.image" alt="">
+        <h3>{{ product.name }}</h3>
+        <p class="description">{{ product.description }}</p>
+        <p class="best-price">Best Price* Rs.{{ product.price }}</p>  
+        <p class="mrp"><del>MRP Rs.{{ product.mrp }}</del></p>
+        <div class="quantity-control" style="margin-left: 50px;">
+          <button class="decrement-button" (click)="decrementQuantity(i)">
+            <i class="fa-solid fa-minus"></i>
+          </button>
+          <div class="quantity-display">
+            {{ product.quantity }}
+          </div>
+          <button class="increment-button" (click)="incrementQuantity(i)">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <br>
+      
+        <button class="add-to-cart" (click)="addToCart()">ADD TO CART</button>
+      </div>
+    </div>
+  </div>
+<br> <br> <br>
+
+
+
+
+<body>
+  <h1>Wellness Products</h1> <br> <br>
+
+  <p>
+    Wellness products refer to a wide range of goods and services that aim to promote an individual’s physical, mental, and
+    emotional well-being. The products can include everything from dietary supplements, herbal remedies, and essential oils to
+    fitness equipment, meditation apps, and therapeutic services like massage therapy and acupuncture.
+  </p>
+
+  <p>
+    The market for wellness products has grown significantly in recent years as people nowadays have become more conscious of their
+    health and seek out ways to improve their overall well-being. Many wellness products claim to offer benefits such as reduced
+    stress, improved sleep, increased energy, and better immune function.
+  </p>
+
+  <p>
+    It is also important to note that wellness medicines are not a substitute for medical treatment. If you are experiencing health
+    problems or have specific concerns, it is best to consult with a doctor before trying any new products or treatments.
+  </p>
+
+  <h2>Categories available in health and wellness products</h2>
+  <p>
+    Health and wellness products can be broadly categorised based on their intended purpose and target audience. Here are some of
+    the most common categories:
+  </p>
+
+  <ul>
+    <li>Dietary supplements: The products supplement one’s diet and provide additional nutrients, such as vitamins, minerals, and
+      herbal extracts.</li>
+    <li>Fitness and exercise equipment: The range of equipment such as dumbbells, resistance bands, yoga mats, and exercise bikes
+      support physical activity and exercise.</li>
+    <li>Personal care products: The category includes hygiene and beauty products, such as soaps, shampoos, deodorants, and
+      cosmetics.</li>
+    <li>Natural and organic products: The commodities in the segment are made from natural ingredients and are often marketed as
+      healthier alternatives to conventional products.</li>
+    <li>Medical devices: The devices such as blood glucose meters, blood pressure monitors, and hearing aids, are developed to
+      diagnose, monitor, or treat medical conditions.</li>
+    <li>Home health care products: The products are focussed on supporting individuals with medical needs to manage their conditions
+      at home, such as wheelchair ramps, medical alert systems, and home oxygen therapy equipment.</li>
+    <li>Mental wellness products: The products are designed to support mental health and wellness, such as meditation apps,
+      aromatherapy products, and stress-relief supplements.</li>
+    <li>Healthy food and snacks: The segment is designed to promote healthy eating habits, such as protein bars, whole-grain
+      crackers, and organic fruits and vegetables.</li>
+  </ul>
+
+  <p>
+    Overall, the health and wellness industry offer a wide range of products that can support a healthy lifestyle and cater to
+    diverse needs and preferences.
+  </p>
+
+  <h2>Does health and wellness mean the same?</h2>
+  <p>
+    Wellness and health are two terms that are used interchangeably, but their meanings and origins are different. Wellness is the
+    state of living an active lifestyle whereas health is a state of being. Health refers to mental, physical, and social
+    well-being and good health will enhance your well-being.
+  </p>
+
+  <h2>FAQs</h2>
+  <dl>
+    <dt><strong>Q: What is a wellness product?</strong></dt>
+    <dd>A: A wellness product can refer to a variety of items, such as dietary supplements, fitness equipment, health monitors,
+      personal care items, and more. These products are designed to support a healthy lifestyle and can aid in achieving specific
+      health goals or managing existing conditions. Netmeds provides easy access to these wellness products, making it simple for
+      people to prioritize their health and wellness from the comfort of their own homes.</dd>
+
+    <dt><strong>Q: What are the most popular health and wellness products?</strong></dt>
+    <dd>A: There are many online pharmacy and wellness stores that offer a wide range of wellness products. Some of the wellness
+      products available on Netmeds include:</dd>
+  </dl>
+
+  <ul>
+    <li>Ayurvedic products such as Chyawanprash, Triphala, Ashwagandha, among others</li>
+    <li>Vitamins and supplements including multivitamins, omega-3 supplements, and more</li>
+    <li>Fitness products such as protein powders, energy bars, and weight management supplements</li>
+    <li>Personal care items such as hair care products, skin care products, and oral care products</li>
+    <li>Sexual wellness products such as condoms and lubricants</li>
+    <li>Health monitoring devices such as blood pressure monitors, blood glucose monitors, and thermometers</li>
+    <li>Homeopathy medicines and products</li>
+  </ul>
+
+  <dl>
+    <dt><strong>Q: How to search for wellness products online?</strong></dt>
+    <dd>A: To search for wellness medicine online, use relevant keywords such as 'natural supplements,' 'herbal remedies,' or
+      'wellness products,' in search engines or online marketplaces. Make sure to read online reviews and check the product
+      ingredients before selecting a wellness product that is suitable for you.</dd>
+
+    <dt><strong>Q: Are wellness products FDA approved?</strong></dt>
+    <dd>A: It depends on the specific wellness product and how it is marketed. While the FDA does regulate some wellness products,
+      such as dietary supplements, they do not approve them in the same way they approve drugs. Instead, the FDA monitors and
+      enforces regulations around labeling, safety, and quality. Consumers in India should always do their own research and
+      consult with their doctors before using any wellness product.</dd>
+  </dl>
+</body>
+
+
+
+<br> 
+
+
+<div class="banner">
+  <img src="assets/Screenshot (27) (1).png" alt="Banner Image">
+  <div class="animation"></div>
+</div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>COMPANY</h3>
+          <ul>
+            <li><a routerLink="/about">About NetLife</a></li>
+            <li><a href="#">Customers Speak</a></li>
+            <li><a href="#">In the News</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>OUR POLICIES</h3>
+          <ul>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Fees and Payments Policy</a></li>
+            <li><a href="#">Shipping and Delivery Policy</a></li>
+            <li><a href="#">Return, Refund and Cancellation Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>SHOPPING</h3>
+          <ul>
+            <li><a href="#">Browse by A-Z</a></li>
+            <li><a href="#">Browse by Manufacturers</a></li>
+            <li><a href="#">Health Articles</a></li>
+            <li><a href="#">Offers / Coupons</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>SOCIAL</h3>
+          <ul>
+            <li><a href="#"><i class="fas fa-users"></i> Patients Alike</a></li>
+            <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+            <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i> Youtube</a></li>
+            <li><a href="#"><i class="fas fa-hand-holding-usd"></i> Refer &amp; Earn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom" style="text-align: center;">
+        <p>Subscribe to our newsletter and get a free subscription to our health and fitness tips, and stay tuned to our latest offers.</p>
+        <div style="display: inline-block;">
+          <form action="#" method="post">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <input type="submit" value="Subscribe">
+          </form><br>
+          <p style="font-weight: bold;">&copy; 2023 Netmeds. All rights reserved.</p>
+        </div>
+      </div>
+      
+    </div>
+  </footer>
+  
+
+      
+      
+
+     
+      
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

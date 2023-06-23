@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "kH5Yu15+drThZE3Osn0tQre13pKR+AYxcvK1VcNFykE=",
+  "Source": "healthCareManagmentDB",
+  "BasePath": "_content/healthCareManagmentDB",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

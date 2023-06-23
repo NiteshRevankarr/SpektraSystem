@@ -1,0 +1,13 @@
+
+  #sidebar a {
+    text-decoration: none;
+  }
+  .orders-container {
+    overflow-x: auto;
+  }
+
+  .table-container {
+    max-height: 400px; 
+    overflow-y: auto;
+  }
+  

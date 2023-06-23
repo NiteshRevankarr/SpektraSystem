@@ -1,0 +1,59 @@
+.table-data {
+  padding: 20px;
+}
+
+.order {
+  margin-bottom: 20px;
+}
+
+.button-container {
+  text-align: right;
+}
+
+.btn-add {
+  border: none;
+  background: none;
+}
+
+.fa-plus {
+  margin-left: 10px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.table thead th {
+  background-color: #b3f1f1;
+  padding: 10px;
+  text-align: left;
+}
+
+.table tbody td {
+  padding: 10px;
+}
+
+.table-info {
+  background-color: #92ebd6;
+}
+
+.btn-delete {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.fa-trash-alt {
+  color: rgb(236, 134, 134);
+}
+
+.btn-no-border {
+  border: none;
+  background: none;
+}
+
+#sidebar a {
+  text-decoration: none;
+}
